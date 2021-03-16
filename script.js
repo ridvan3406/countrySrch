@@ -7,16 +7,17 @@ const getCountry = (country) => {
   const request = new XMLHttpRequest();
   request.open('GET', url + country);
   request.send();
-    request.responseType = 'json';
-    request.onreadystatechange = () => {
-    if (request.readyState === XMLHttpRequest.DONE){
-        //const [data] = request.response;
-        const data = request.response[0];
-        console.log(request.response)
-        renderCountry(data);
-        console.log(data);
-        }
-    }
+request.responseType = 'json';
+request.onreadystatechange = () => {
+  if (request.readyState === XMLHttpRequest.DONE){
+    //const [data] = request.response;
+    const data = request.response[0];
+    console.log(request.response)
+    renderCountry(data);
+    console.log(data);
+    
+  }
+}
 }
 // btn.addEventListener ('click', getCountry);
 btn.addEventListener ('click', displayCountries);
